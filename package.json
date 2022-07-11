@@ -1,0 +1,19 @@
+{
+  "name": "tkinter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "frames.py",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerripat/tKinter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jerripat/tKinter/issues"
+  },
+  "homepage": "https://github.com/jerripat/tKinter#readme"
+}

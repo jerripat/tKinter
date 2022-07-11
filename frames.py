@@ -2,28 +2,39 @@ from tkinter import *
 
 root = Tk()
 root.title("Frames")
-root.geometry("400x400")
+#root.geometry("400x400")
 
 
 def show():
-    file_frame.grid(row=1,column=0, columnspan=2, padx=20, pady=20)
+    file_frame.grid(row=1, column=0, columnspan=2, padx=20, pady=20)
+
+
 def hide():
     file_frame.grid_forget()
-    
+
+
 def new():
+    
     hide_menu_frames()
-    file_frame.grid(row=1,column=0, columnspan=2, padx=20, pady=20)
+    current_status.set("File Status")
+
+    file_frame.grid(row=1, column=0, columnspan=2, padx=20, pady=20)
+
 
 def cut():
+    current_status.set("Cut Status")
     hide_menu_frames()
-    edit_frame.grid(row=1,column=0, columnspan=2, padx=20, pady=20)
-    
+    edit_frame.grid(row=1, column=0, columnspan=2, padx=20, pady=20)
+
+
 def hide_menu_frames():
     edit_frame.grid_forget()
     file_frame.grid_forget()
-        
+
+
 def fake_command():
     pass
+
 
 my_menu = Menu(root)
 root.config(menu=my_menu)
@@ -57,17 +68,21 @@ choice_menu.add_command(label="Exit", command=root.quit)
 # hide_button.grid(row=2, column=1)
 
 # File Menu frame
-file_frame = Frame(root, width=200, height=200, bd=2, bg="#c9ae63", relief="groove")
+file_frame = Frame(root, width=200, height=200, bd=2,
+                   bg="#c9ae63", relief="groove")
 #file_frame.grid(row=1,column=0, columnspan=2, padx=20, pady=20)
-file_frame_label= Label(file_frame, text="File Frame").pack(padx=20, pady=20)
+file_frame_label = Label(file_frame, text="File Frame").pack(padx=20, pady=20)
 
 # Edit Menu Frame
-edit_frame = Frame(root, width=200, height=200, bd=2, bg="#c9ae63", relief="groove")
+edit_frame = Frame(root, width=200, height=200, bd=2,
+                   bg="#c9ae63", relief="groove")
 #file_frame.grid(row=1,column=0, columnspan=2, padx=20, pady=20)
-edit_frame_label= Label(edit_frame, text="Cut Frame").pack(padx=20, pady=20)
+edit_frame_label = Label(edit_frame, text="Cut Frame").pack(padx=20, pady=20)
 
+current_status = StringVar()
+current_status.set("Waiting")
 
-
+status_bar = Label(root, textvariable=current_status, bd=2,relief="sunken", width=50).grid(row=3, column=0)
 
 
 root.mainloop()
