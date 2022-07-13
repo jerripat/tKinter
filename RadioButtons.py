@@ -9,7 +9,8 @@ root = tk.Tk()
 root.title("Radio Button Demo")
 root.geometry("400x400")
 root.resizable(False, False)
-
+img = PhotoImage(file='owl2.ico')
+root.tk.call('wm', 'iconphoto', root._w, img)
 
 def show_selected_size():
     showinfo(title='Result', message=selected_size.get())

@@ -5,8 +5,8 @@ from tkinter import *
 root = Tk()
 root.title = ("Radio Buttons")
 root.geometry("400x400")
-#root.iconbitmap('/guis/tKinter/owl2.ico')
-
+root.iconbitmap('owl2.ico')
+img = PhotoImage()
 # Radio Buttons
 def radio():
     if rad.get() == 1:
