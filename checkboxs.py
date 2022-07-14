@@ -9,7 +9,7 @@ root.geometry("440x440")
 
 def toppings():
     if cb.get() == "Ex Cheese":
-        top_label = Label(root, text="You do not want extra cheese?")
+        top_label = Label(root, text="You do not want extra cheese?").pack(pady=10)
     else:
         top_label = Label(root, text="You do want extra cheese?")
     
