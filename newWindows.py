@@ -1,13 +1,15 @@
 from tkinter import *
 from tkinter import ttk
-from PIL import Image
+#from PIL import ImageTk, Image
+from tkinter import filedialog
+
 
 
 root = Tk()
 root.title("New Window")
 root.geometry("400x400")
 
-im = Image.open('owl2.ico')
+im = Image.open('owl2.xbm')
 im.show()
 root.iconbitmap('wm',im)
 # img = PhotoImage()
