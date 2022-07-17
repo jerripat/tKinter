@@ -1,17 +1,22 @@
 from tkinter import *
 from tkinter import ttk
+from PIL import Image
 
 
 root = Tk()
 root.title("New Window")
 root.geometry("400x400")
-# root.iconbitmap('owl2.ico')
+
+im = Image.open('owl2.ico')
+im.show()
+root.iconbitmap('wm',im)
 # img = PhotoImage()
+
 
 def open_window():
     new =Toplevel()
     new.title("New Sub-Window")
-    new.geometry("300x200")
+    new.geometry("300x300")
     # root.iconbitmap('owl2.ico')
     # img = PhotoImage('')
     my_label = Label(new, text="My fancy new window").pack(pady=20)
