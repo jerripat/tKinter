@@ -1,28 +1,24 @@
 from tkinter import *
-from tkinter import ttk
-#from PIL import ImageTk, Image
-from tkinter import filedialog
-
-
+from PIL import ImageTk, Image
 
 root = Tk()
 root.title("New Window")
 root.geometry("400x400")
+root.iconbitmap(r'python.ico')
 
-im = Image.open('owl2.xbm')
-im.show()
-root.iconbitmap('wm',im)
-# img = PhotoImage()
 
 
 def open_window():
     new =Toplevel()
     new.title("New Sub-Window")
-    new.geometry("300x300")
-    # root.iconbitmap('owl2.ico')
-    # img = PhotoImage('')
+    new.geometry("400x400")
+    new.iconbitmap(r'python.ico')
+    
     my_label = Label(new, text="My fancy new window").pack(pady=20)
-    destroy_button = Button(new, text='Quit',command=new.destroy).pack()
+    my_img = ImageTk.PhotoImage(Image.open("python-icon.png"))
+    img_label = Label(new, image=my_img).pack(pady=5)
+    
+    destroy_button = Button(new, text='Quit',command=new.destroy).pack(pady=5)
     
     # Minimize original window
     #hide_button = Button(new, text = 'Hide Main Window',command=root.iconify).pack(pady=10)
