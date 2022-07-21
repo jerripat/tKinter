@@ -1,0 +1,20 @@
+import tkinter as tk
+from tkinter import filedialog as fd
+from tkinter import *
+from PIL import ImageTk, Image
+
+root = Tk()
+root.title("New Window")
+root.geometry("400x400")
+#root.iconbitmap(r'light.jpg')
+
+def callback():
+    #name = fd.askopenfilename()
+    root.filename = fd.askopenfilename()
+    my_label = Label(root, text=root.filename).pack(pady=10)
+    #print(name)
+    
+errmsg = 'Error!'
+tk.Button(text='Click to open file', command=callback).pack(fill=tk.X)
+
+tk.mainloop()

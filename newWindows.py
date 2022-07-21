@@ -11,12 +11,12 @@ root.geometry("400x400")
 def open_window():
     new =Toplevel()
     new.title("New Sub-Window")
-    new.geometry("400x400")
+    new.geometry("300x400")
     #new.iconbitmap(r'python.ico')
     
     my_label = Label(new, text="My fancy new window").pack(pady=20)
-    #my_img = ImageTk.PhotoImage(Image.open("light.jpg"))
-    #img_label = Label(new, image=my_img).pack(pady=5)
+    my_img = ImageTk.PhotoImage(Image.open("light.jpg"))
+    img_label = Label(new, image=my_img).pack(pady=5)
     
     destroy_button = Button(new, text='Quit',command=new.destroy).pack(pady=5)
     
